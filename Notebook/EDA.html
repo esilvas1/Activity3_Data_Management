@@ -7540,7 +7540,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -7559,7 +7559,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7882,7 +7882,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Dimensiones-del-Dataset">2. Dimensiones del Dataset<a class="anchor-link" href="#2.-Dimensiones-del-Dataset">¶</a></h2>
+<h3 id="1.1.-Dimensiones-del-Dataset">1.1. Dimensiones del Dataset<a class="anchor-link" href="#1.1.-Dimensiones-del-Dataset">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7933,7 +7933,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Transformaci%C3%B3n-de-datos-(pivot)">3. Transformación de datos (pivot)<a class="anchor-link" href="#3.-Transformaci%C3%B3n-de-datos-(pivot)">¶</a></h2>
+<h2 id="2.-Transformaci%C3%B3n-de-datos-(pivot)">2. Transformación de datos (pivot)<a class="anchor-link" href="#2.-Transformaci%C3%B3n-de-datos-(pivot)">¶</a></h2><p>Se evidencia que para facilitar el análisis del dataset es más conveniente transformar la estructura de los datos de formato ancho a formato largo. En el formato original, cada fecha está representada como una columna separada, lo que dificulta el análisis temporal y la visualización. Para solucionar esto, utilizamos el método <strong>pivot</strong> mediante la función <code>melt()</code> de pandas, que convierte las columnas de fechas en filas, creando una estructura más normalizada y manejable donde cada registro representa un país/región en una fecha específica con su respectivo número de casos confirmados.</p>
 </div>
 </div>
 </div>
@@ -7942,7 +7942,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
@@ -8151,7 +8151,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-An%C3%A1lisis-de-Calidad-de-Datos">2. Análisis de Calidad de Datos<a class="anchor-link" href="#2.-An%C3%A1lisis-de-Calidad-de-Datos">¶</a></h2><p>En esta sección realizaremos un análisis exhaustivo de la calidad de los datos para identificar:</p>
+<h2 id="3.-An%C3%A1lisis-de-Calidad-de-Datos">3. Análisis de Calidad de Datos<a class="anchor-link" href="#3.-An%C3%A1lisis-de-Calidad-de-Datos">¶</a></h2><p>En esta sección realizaremos un análisis exhaustivo de la calidad de los datos para identificar:</p>
 <ul>
 <li>Datos faltantes (valores nulos o NaN)</li>
 <li>Valores erróneos o inconsistentes</li>
@@ -8159,6 +8159,507 @@ a.anchor-link {
 <li>Duplicados</li>
 <li>Tipos de datos incorrectos</li>
 </ul>
+<h3 id="3.1-Datos-faltantes-(valores-nulos-o-NaN)">3.1 Datos faltantes (valores nulos o NaN)<a class="anchor-link" href="#3.1-Datos-faltantes-(valores-nulos-o-NaN)">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e3fe2e25">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># Análisis de datos faltantes</span>
+<span class="n">null_counts</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">null_percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_long</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_long</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Crear DataFrame con resultados</span>
+<span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'Columna'</span><span class="p">:</span> <span class="n">null_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="s1">'Valores Faltantes'</span><span class="p">:</span> <span class="n">null_counts</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">'Porcentaje (%)'</span><span class="p">:</span> <span class="n">null_percentage</span><span class="o">.</span><span class="n">values</span>
+<span class="p">})</span>
+
+<span class="c1"># Mostrar resumen en Markdown</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"""**Total de filas en el dataset:** </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_long</span><span class="p">)</span><span class="si">}</span><span class="s2">"""</span><span class="p">))</span>
+
+<span class="c1"># Mostrar tabla de datos faltantes</span>
+<span class="n">display</span><span class="p">(</span><span class="n">missing_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p><strong>Total de filas en el dataset:</strong> 330327</p>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Columna</th>
+<th>Valores Faltantes</th>
+<th>Porcentaje (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Province/State</td>
+<td>226314</td>
+<td>68.512111</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Country/Region</td>
+<td>0</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Lat</td>
+<td>2286</td>
+<td>0.692042</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Long</td>
+<td>2286</td>
+<td>0.692042</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Date</td>
+<td>0</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Cases</td>
+<td>0</td>
+<td>0.000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f5af6f7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.1.1.-Interpretaci%C3%B3n-de-la-Tabla-de-Datos-Faltantes">3.1.1. Interpretación de la Tabla de Datos Faltantes<a class="anchor-link" href="#3.1.1.-Interpretaci%C3%B3n-de-la-Tabla-de-Datos-Faltantes">¶</a></h3><p>La tabla anterior muestra un análisis detallado de los valores faltantes (nulos) en el dataset transformado de COVID-19. A continuación se explican los hallazgos para cada columna:</p>
+<h4 id="Province/State-(Provincia/Estado)"><strong>Province/State</strong> (Provincia/Estado)<a class="anchor-link" href="#Province/State-(Provincia/Estado)">¶</a></h4><ul>
+<li><strong>Valores faltantes:</strong> 226,314</li>
+<li><strong>Porcentaje:</strong> 68.51%</li>
+<li><strong>Interpretación:</strong> Esta es la columna con mayor cantidad de datos faltantes. Esto es <strong>esperado y normal</strong>, ya que muchos países reportan datos a nivel nacional sin desglose por provincias o estados. Por ejemplo, países pequeños como Andorra o Luxemburgo no tienen subdivisiones provinciales en el reporte.</li>
+</ul>
+<h4 id="Lat-(Latitud)-y-Long-(Longitud)"><strong>Lat</strong> (Latitud) y <strong>Long</strong> (Longitud)<a class="anchor-link" href="#Lat-(Latitud)-y-Long-(Longitud)">¶</a></h4><ul>
+<li><p><strong>Valores faltantes:</strong> 2,286 en cada una</p>
+</li>
+<li><p><strong>Porcentaje:</strong> 0.69%</p>
+</li>
+<li><p><strong>Interpretación:</strong> Un porcentaje muy bajo de registros sin coordenadas geográficas. Estos corresponden principalmente a categorías especiales como "Repatriated Travellers" (viajeros repatriados) o "Unknown" (desconocido), que no tienen una ubicación geográfica específica.</p>
+</li>
+<li><p><strong>Interpretación:</strong> <strong>Datos completos</strong>. Todos los registros tienen el número de casos confirmados, que es la variable principal de análisis.</p>
+</li>
+</ul>
+<h4 id="Conclusi%C3%B3n-sobre-Calidad-de-Datos:">Conclusión sobre Calidad de Datos:<a class="anchor-link" href="#Conclusi%C3%B3n-sobre-Calidad-de-Datos:">¶</a></h4><p>El dataset presenta una <strong>excelente calidad general</strong>:</p>
+<ul>
+<li>Las columnas críticas (País, Fecha y Casos) están 100% completas</li>
+<li>Los valores faltantes en Province/State son estructurales (no todos los países reportan por provincia)</li>
+<li>Solo 0.69% de registros carecen de coordenadas geográficas, principalmente en categorías especiales que no requieren geolocalización</li>
+</ul>
+<p><strong>Recomendación:</strong> No es necesario eliminar registros por datos faltantes. Los valores nulos en Province/State y coordenadas pueden manejarse según el tipo de análisis a realizar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=20ba3981">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.2-Valores-err%C3%B3neos-o-inconsistentes">3.2 Valores erróneos o inconsistentes<a class="anchor-link" href="#3.2-Valores-err%C3%B3neos-o-inconsistentes">¶</a></h3><p>A continuación se realiza la verificación de valores erroneos o incosistentes sobre la columna <strong>Country/Region</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c28edbc4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+
+<span class="c1"># 1. Análisis de la columna Country/Region</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"""#### Análisis de Country/Region"""</span><span class="p">))</span>
+
+<span class="n">unique_countries</span> <span class="o">=</span> <span class="n">df_long</span><span class="p">[</span><span class="s1">'Country/Region'</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total de países/regiones únicos: </span><span class="si">{</span><span class="n">unique_countries</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+
+<span class="c1"># Verificar inconsistencias en nombres</span>
+<span class="n">countries_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Country/Region'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">problems_country</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">country</span> <span class="o">!=</span> <span class="n">country</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="n">problems_country</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">'País'</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s1">'Problema'</span><span class="p">:</span> <span class="s1">'Espacios extra'</span><span class="p">})</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">char</span> <span class="ow">in</span> <span class="n">country</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">,</span> <span class="s1">'|'</span><span class="p">,</span> <span class="s1">'@'</span><span class="p">,</span> <span class="s1">'#'</span><span class="p">]):</span>
+        <span class="n">problems_country</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">'País'</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s1">'Problema'</span><span class="p">:</span> <span class="s1">'Caracteres especiales'</span><span class="p">})</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">problems_country</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"Se encontraron inconsistencias:"</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">problems_country</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"No se encontraron inconsistencias en nombres de países"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<h4 id="An%C3%A1lisis-de-Country/Region">Análisis de Country/Region<a class="anchor-link" href="#An%C3%A1lisis-de-Country/Region">¶</a></h4>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p>Total de países/regiones únicos: 201</p>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p>No se encontraron inconsistencias en nombres de países</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0bcb9931">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A continuación se realiza la verificación de valores erroneos o incosistentes sobre la columna <strong>Province/State</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0a133026">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 2. Análisis de Province/State</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"""#### Análisis de Province/State"""</span><span class="p">))</span>
+
+<span class="n">unique_provinces</span> <span class="o">=</span> <span class="n">df_long</span><span class="p">[</span><span class="s1">'Province/State'</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total de provincias/estados únicos: </span><span class="si">{</span><span class="n">unique_provinces</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+
+
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Muestra de los Country/Region con sus provincias/estados, solo estos tienen Province/State"</span><span class="p">))</span>
+<span class="n">provinces_by_country</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'Country/Region'</span><span class="p">)[</span><span class="s1">'Province/State'</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">provinces_by_country</span> <span class="o">=</span> <span class="n">provinces_by_country</span><span class="p">[</span><span class="n">provinces_by_country</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>   
+<span class="n">display</span><span class="p">(</span><span class="n">provinces_by_country</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<h4 id="An%C3%A1lisis-de-Province/State">Análisis de Province/State<a class="anchor-link" href="#An%C3%A1lisis-de-Province/State">¶</a></h4>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p>Total de provincias/estados únicos: 91</p>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p>Muestra de los Country/Region con sus provincias/estados, solo estos tienen Province/State</p>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Province/State</th>
+</tr>
+<tr>
+<th>Country/Region</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>China</th>
+<td>34</td>
+</tr>
+<tr>
+<th>Canada</th>
+<td>16</td>
+</tr>
+<tr>
+<th>United Kingdom</th>
+<td>14</td>
+</tr>
+<tr>
+<th>France</th>
+<td>11</td>
+</tr>
+<tr>
+<th>Australia</th>
+<td>8</td>
+</tr>
+<tr>
+<th>Netherlands</th>
+<td>4</td>
+</tr>
+<tr>
+<th>New Zealand</th>
+<td>2</td>
+</tr>
+<tr>
+<th>Denmark</th>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bb007035">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>No existen valores incongruentes o erroneos sobre <strong>Province/State</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c7b28c09">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A continuación se realiza la verificación de valores erroneos o incosistentes sobre las columnas <strong>Coordenaas LAT y LONG</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7cc13ebc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 3. Verificar rangos válidos de coordenadas</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">---</span>
+<span class="s2">#### Análisis de Coordenadas Geográficas</span>
+<span class="s2">"""</span><span class="p">))</span>
+
+<span class="n">invalid_coords</span> <span class="o">=</span> <span class="n">df_long</span><span class="p">[</span>
+    <span class="p">((</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Lat'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Lat'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">90</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Lat'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">)))</span> <span class="o">|</span>
+    <span class="p">((</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Long'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Long'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">180</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Long'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">)))</span>
+<span class="p">]</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">invalid_coords</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">invalid_coords</span><span class="p">)</span><span class="si">}</span><span class="s2"> registros con coordenadas fuera de rango**"</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">invalid_coords</span><span class="p">[[</span><span class="s1">'Country/Region'</span><span class="p">,</span> <span class="s1">'Province/State'</span><span class="p">,</span> <span class="s1">'Lat'</span><span class="p">,</span> <span class="s1">'Long'</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"**Todas las coordenadas están en rangos válidos (-90/90, -180/180)**"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<hr/>
+<h4 id="An%C3%A1lisis-de-Coordenadas-Geogr%C3%A1ficas">Análisis de Coordenadas Geográficas<a class="anchor-link" href="#An%C3%A1lisis-de-Coordenadas-Geogr%C3%A1ficas">¶</a></h4>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p><strong>Todas las coordenadas están en rangos válidos (-90/90, -180/180)</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a3b0fe30">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A continuación se realiza la verificación de valores erroneos o incosistentes sobre la columna <strong>Cases</strong></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=abb4a206">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 4. Verificar valores negativos en Cases</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">---</span>
+<span class="s2">#### Verificación de Valores Negativos</span>
+<span class="s2">"""</span><span class="p">))</span>
+
+<span class="n">negative_cases</span> <span class="o">=</span> <span class="n">df_long</span><span class="p">[</span><span class="n">df_long</span><span class="p">[</span><span class="s1">'Cases'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">negative_cases</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**ALERTA: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">negative_cases</span><span class="p">)</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> registros con casos negativos**"</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">negative_cases</span><span class="p">[[</span><span class="s1">'Country/Region'</span><span class="p">,</span> <span class="s1">'Province/State'</span><span class="p">,</span> <span class="s1">'Date'</span><span class="p">,</span> <span class="s1">'Cases'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"**No hay valores negativos en Cases**"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<hr/>
+<h4 id="Verificaci%C3%B3n-de-Valores-Negativos">Verificación de Valores Negativos<a class="anchor-link" href="#Verificaci%C3%B3n-de-Valores-Negativos">¶</a></h4>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p><strong>No hay valores negativos en Cases</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=52163c99">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.3-Valores-at%C3%ADpicos-(outliers)">3.3 Valores atípicos (outliers)<a class="anchor-link" href="#3.3-Valores-at%C3%ADpicos-(outliers)">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=69215ee0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.4-Duplicados">3.4 Duplicados<a class="anchor-link" href="#3.4-Duplicados">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e29ecf9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.5-Tipos-de-datos-incorrectos">3.5 Tipos de datos incorrectos<a class="anchor-link" href="#3.5-Tipos-de-datos-incorrectos">¶</a></h3>
 </div>
 </div>
 </div>
