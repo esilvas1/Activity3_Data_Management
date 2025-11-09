@@ -119,5 +119,5 @@ print("   4. Haz clic en 'Guardar'")
 
 webbrowser.open(f'file:///{html_path}')
 
-print("\n✅ Proceso completado")
+print("\n✅ Proceso completado exitosamente")
 print("✨ El código Python se ajustará automáticamente en el PDF")
